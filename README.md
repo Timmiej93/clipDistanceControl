@@ -1,4 +1,7 @@
 # ClipDistanceControl
+
+[Readme auch verfügbar in Deutsch.](https://github.com/Timmiej93/clipDistanceControl/blob/master/README_DE.md)
+
 This is a script for the game Farming Simulator 17. The purpose of this script is to control the 'clip distance' (also known as view distance or draw distance) of an object or vehicle that is inside the associated trigger. With how the GIANTS engine currently handles rendering objects, it also renders them if they are not visible to the player (e.g. a broken sight-line or blocked by a vehicle shed). Reducing the clip distance on them when they are in this shed can greatly increase the performance of the game. While and after I have been working on the script, it has been thoroughly tested by [Northside Farming Group](https://www.fs-uk.com/forum/index.php?topic=182644.0) for months, meaning that this script should be MP compatible. Creating this script was the idea of SneakyBeaky, and is based upon the FS15 version, of which the author is unknown to me. If you know who the original author is, please let me know.
 This script has to be implemented on a map. 
 
