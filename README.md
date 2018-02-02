@@ -31,7 +31,7 @@ Simply repeat this process for each trigger. All given names are **case sensitiv
 
 If people are having issues with implementing this script, I can add screenshots to clarify some statements, just let me know.
 
-You need to unzip the file provided to be able to implement it in the map. I hope this goes without saying.
+You need to download the lua file provided to be able to implement it in the map. I hope this goes without saying.
 
 Those who have viewed the Oakfield WIP thread may have seen that a similar script will be implemented on that map. These scripts are independent of each other, and while similar, are not the same. This means that this tutorial will not work for that script. If you are unsure which script you are using, either open it and check if there is a comment with my name on the first couple of lines, or simply download this script to replace the one you have.
 
