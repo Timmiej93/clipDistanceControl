@@ -6,6 +6,9 @@ This is a script for the game Farming Simulator 17. The purpose of this script i
 This script has to be implemented on a map. 
 
 ## How to implement
+
+If you want to implement this script on your map, please be sure to read the [Copyright](#Copyright) section of this README. There are just a few simple rules that ensure that the origin of the script can always be found.
+
 **Adding the trigger shape**
 - Add a shape to your map. I'd suggest simply clicking '**Create > Primitives > Cube**' in the Giants editor menu.
 - In the Attributes window, change the **Scale X / Y / Z** values so the trigger is the desired size and tick the '**Rigid Body**' checkbox.
@@ -40,6 +43,7 @@ Copyright (c) Timmiej93, 2018. All rights reserved.
 
 Disclaimer: By using the code available on this website, you agree to the fact that you are using this code solely at your own risk. The code is provided without any form of warranty, and I (Timmiej93) hereby disclaim all forms of warranty.
 
-This file **can** be used in any map without specific permission. It can however **not** be claimed to be your own work. Crediting me is **not** required, but it would be nice.
+This file **`can`** be used in any map without specific permission. It can however **`not`** be claimed to be your own work. Crediting me is **`not`** required, but it would be nice.  
+The comment block at the start of the file (line 1 through 44) can **`not`** be removed however, to ensure that anyone with questions can find the original author, and can complain to me, instead of you, the map maker.
 
 I (Timmiej93) wrote this script, and I hold the copyright on this mod. That simply means that the code is mine. It also means that you can't just use this code for your own projects. Any contributions becomes my property as soon as it's committed, otherwise I would not be able to publish these changes. If your computer crashes or is damaged in any other way due to this mod, you can tell me, and I'll try to fix it for you. I will not take any responsibility for any damage.

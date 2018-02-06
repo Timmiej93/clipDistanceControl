@@ -37,7 +37,9 @@
 -- Copyright (c) Timmiej93, 2018
 -- This file can be used in any map without specific permission. It can however not be claimed to be
 --	your own work. Crediting me is not required, but it would be nice.
--- For more information on copyright for this mod, please check the readme file on Github
+-- For more information on copyright for this mod, please check the readme file on GitHub:
+--	GitHub > Timmiej93 > clipDistanceControl
+--	https://github.com/Timmiej93/clipDistanceControl
 --
 -- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ --
 
@@ -63,8 +65,6 @@ function clipDistanceControl:new(id, customMt)
 	self.innerClipDistance = Utils.getNoNil(getUserAttribute(id, "innerClipDistance"), 300)
 	self.savedCD = {}
 
-	self.isEnabled = true
-	
 	return self
 end
 
