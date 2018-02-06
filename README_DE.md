@@ -3,7 +3,7 @@ Dies ist ein Skript für das Spiel Landwirtschaft Simulator 17. Der Zweck dieses
 
 ## Implementierung
 
-Wenn Sie dieses Skript auf Ihrer Karte implementieren möchten, lesen Sie bitte den Abschnitt zum [Copyright](#Copyright) dieser README. Es gibt nur ein paar einfache Regeln, die sicherstellen, dass der Ursprung des Skripts immer gefunden werden kann.
+Wenn Sie dieses Skript auf Ihrer Karte implementieren möchten, lesen Sie bitte den Abschnitt zum [Copyright](#copyright) dieser README. Es gibt nur ein paar einfache Regeln, die sicherstellen, dass der Ursprung des Skripts immer gefunden werden kann.
 
 **Hinzufügen der Triggerform**
 - Fügen Sie Ihrer Karte eine Form hinzu. Ich würde vorschlagen, einfach auf "**Create > Primitive> Cube**" im Giants-Editor-Menü zu klicken.

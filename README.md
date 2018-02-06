@@ -7,7 +7,7 @@ This script has to be implemented on a map.
 
 ## How to implement
 
-If you want to implement this script on your map, please be sure to read the [Copyright](#Copyright) section of this README. There are just a few simple rules that ensure that the origin of the script can always be found.
+If you want to implement this script on your map, please be sure to read the [Copyright](#copyright) section of this README. There are just a few simple rules that ensure that the origin of the script can always be found.
 
 **Adding the trigger shape**
 - Add a shape to your map. I'd suggest simply clicking '**Create > Primitives > Cube**' in the Giants editor menu.
