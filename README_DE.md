@@ -33,9 +33,8 @@ Wenn Leute Probleme mit der Implementierung dieses Skripts haben, kann ich Scree
 ## Copyright
 Copyright (c) Timmiej93, 2018. All rights reserved.
 
-Dieses Script kann in **jeder** Karte ohne spezielle Erlaubnis verwendet werden. Eine Karte, die dieses Skript enthält, kann auch **ohne Einschränkungen** verteilt werden. Anrechnen ist **nicht erforderlich**, aber es wäre schön.
-Das Skript kann jedoch **nicht** als dein eigenes Werk beansprucht werden.  
-Der Kommentarblock am Anfang der Datei (Zeile 1 bis 44) kann jedoch **`nicht`** entfernt werden, um sicherzustellen, dass jeder mit Fragen den ursprünglichen Autor finden kann, und sich bei mir beschweren kann, anstelle bei Ihnen, der Kartenhersteller.
+Dieses Script kann in **jeder** Karte ohne spezielle Erlaubnis verwendet werden. Eine Karte, die dieses Skript enthält, kann auch **ohne Einschränkungen** verteilt werden. Anrechnen ist **nicht erforderlich**, aber es wäre schön. Das Skript kann jedoch **nicht** als dein eigenes Werk beansprucht werden.  
+Der Kommentarblock am Anfang der Datei (Zeile 1 bis 44) kann jedoch **`nicht`** entfernt werden (es ist auch nicht nötig, ihn zu entfernen), um sicherzustellen, dass jeder mit Fragen den ursprünglichen Autor finden kann, und sich bei mir beschweren kann, anstelle bei Ihnen, der Kartenhersteller.
 
 Disclaimer: Durch die Verwendung des auf dieser Website verfügbaren Codes erklären Sie sich damit einverstanden, dass Sie diesen Code ausschließlich auf Ihr eigenes Risiko verwenden. Der Code wird ohne irgendeine Form von Garantie geliefert, und ich (Timmiej93) lehne hiermit jede Form von Garantie ab.
 
