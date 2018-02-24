@@ -1,11 +1,11 @@
 -- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ --
--- clipDistanceControl
+-- clipDistanceControl v1.1.0.0
 --
 -- Purpose: The purpose of this script is to control the 'clip distance' (also known as view distance)
---	of an object that is inside the associated trigger. With how the GIANTS engine currently handles
---	rendering objects, it also renders them if they are not visible to the player (e.g. blocked by a 
---	vehicle shed). Reducing the clip distance on them when they are in this shed can greatly increase
---	the performance of the game.
+--	 of an object that is inside the associated trigger. With how the GIANTS engine currently handles
+--	 rendering objects, it also renders them if they are not visible to the player (e.g. blocked by a 
+--	 vehicle shed). Reducing the clip distance on them when they are in this shed can greatly increase
+--	 the performance of the game.
 --
 -- How to use:
 -- - Add the trigger shape
@@ -33,13 +33,25 @@
 -- 
 -- Authors: Timmiej93
 -- Based on the FS15 script 'clipDistanceControl', of which I have been unable to find the author.
+--	 If you know or are the original author, please let me know, so I can properly credit them.
+--
+-- Changelog
+--	For the changelog, please visit GitHub. This always has the most up to date and most complete
+--  changelog available. GitHub information is at the bottom of this comment block.
+--
 --
 -- Copyright (c) Timmiej93, 2018
 -- This file can be used in any map without specific permission. It can however not be claimed to be
---	your own work. Crediting me is not required, but it would be nice.
--- For more information on copyright for this mod, please check the readme file on GitHub:
---	GitHub > Timmiej93 > clipDistanceControl
---	https://github.com/Timmiej93/clipDistanceControl
+--	 your own work. Crediting me is not required, but it would be nice. This comment block (line 1 
+--	 through 56) can NOT be removed (there is also no reason to remove it), to ensure that anyone 
+--	 with questions can find the original author, and can complain to me, instead of you, the map 
+--	 maker.
+-- For more information or questions on copyright for this mod, please check the readme file on 
+--	 GitHub. GitHub information is at the bottom of this comment block.
+--
+-- GitHub information
+--	 GitHub > Timmiej93 > clipDistanceControl
+--	 https://github.com/Timmiej93/clipDistanceControl
 --
 -- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ --
 
@@ -52,43 +64,75 @@ function clipDistanceControl.onCreate(id)
 end
   
 function clipDistanceControl:new(id, customMt)
+
+	if (g_currentMission.CDC_savedDistances == nil) then
+		g_currentMission.CDC_savedDistances = {}
+	end
+
 	local self = {}
 	if (customMt ~= nil) then
 		setmetatable(self, customMt)
 	else
 		setmetatable(self, clipDistanceControl_mt)
 	end
-  
+
 	self.triggerId = id
 	addTrigger(id, "clipDistanceControlCallback", self)
 	
-	self.innerClipDistance = Utils.getNoNil(getUserAttribute(id, "innerClipDistance"), 300)
 	self.savedCD = {}
+	self.innerClipDistance = Utils.getNoNil(getUserAttribute(id, "innerClipDistance"), 100)
 
 	return self
 end
 
-function clipDistanceControl:delete()
+function clipDistanceControl:deleteMap()
 	removeTrigger(self.triggerId)
 end
 
+function clipDistanceControl:keyEvent(unicode, sym, modifier, isDown) end
+function clipDistanceControl:mouseEvent(posX, posY, isDown, isUp, button) end
+function clipDistanceControl:draw() end
+function clipDistanceControl:update(dt) end
+
 function clipDistanceControl:clipDistanceControlCallback(triggerId, otherId, onEnter, onLeave, onStay, otherShapeId)
+
+	-- Use the otherId to check if it's a vehicle or an object.
 	local vehicle = g_currentMission.nodeToVehicle[otherId]
 	local object = g_currentMission.nodeObjects[otherId]
 
+	-- Grab a local copy of the table, to prevent humongeous lines.
+	local gcmData = g_currentMission.CDC_savedDistances
+
 	if (vehicle ~= nil or object ~= nil) then
+	-- If the ID is indeed a vehicle or an ojbect...
 
 		if (onEnter) then
+			-- Get the vehicle's clip distance.
 			local cd = getClipDistance(otherId)
+
 			if (cd ~= nil and self.savedCD[otherId] == nil) then
+				-- If the found clipdistance isn't nil, and this vehicle/object isn't in this trigger's database yet...
+				if (gcmData[otherId] == nil) then
+					-- If this vehicle/object isn't in the global database yet, store it there.
+					gcmData[otherId] = cd
+				end
+				-- Store the clip distance in this trigger's database.
 				self.savedCD[otherId] = cd
+				-- Set the vehicle's/object's clip distance to the trigger's distance.
 				setClipDistance(otherId, self.innerClipDistance)
+
 			end
 		end
+
 		if (onLeave) then
-			local cd = self.savedCD[otherId]
+			-- Get the stored (original) clip distance from the global database
+			local cd = gcmData[otherId]
+
 			if (cd ~= nil) then
+				-- If the stored clip distance isn't nil, clear the stored data in this trigger's database and the global
+				--	database, and then set the clipdistance back to the original clip distance of the vehicle / object.
 				self.savedCD[otherId] = nil
+				gcmData[otherId] = nil
 				setClipDistance(otherId, cd)
 			end
 		end
@@ -96,3 +140,4 @@ function clipDistanceControl:clipDistanceControlCallback(triggerId, otherId, onE
 end
 
 g_onCreateUtil.addOnCreateFunction("clipDistanceControl", clipDistanceControl.onCreate)
+addModEventListener(clipDistanceControl)
