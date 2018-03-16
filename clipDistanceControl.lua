@@ -86,7 +86,9 @@ function clipDistanceControl:new(id, customMt)
 end
 
 function clipDistanceControl:deleteMap()
-	removeTrigger(self.triggerId)
+	if (self.triggerId ~= nil) then
+		removeTrigger(self.triggerId)
+	end
 end
 
 function clipDistanceControl:keyEvent(unicode, sym, modifier, isDown) end
