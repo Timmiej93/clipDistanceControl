@@ -1,5 +1,6 @@
 -- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ --
--- clipDistanceControl v1.1.0.0
+-- clipDistanceControl v1.1.0.1
+--	(2018/03/22)
 --
 -- Purpose: The purpose of this script is to control the 'clip distance' (also known as view distance)
 --	 of an object that is inside the associated trigger. With how the GIANTS engine currently handles
@@ -60,7 +61,7 @@ clipDistanceControl = {}
 local clipDistanceControl_mt = Class(clipDistanceControl)
 
 function clipDistanceControl.onCreate(id)
-    clipDistanceControl:new(id)
+    g_currentMission:addNonUpdateable(clipDistanceControl:new(id))
 end
   
 function clipDistanceControl:new(id, customMt)
@@ -85,16 +86,11 @@ function clipDistanceControl:new(id, customMt)
 	return self
 end
 
-function clipDistanceControl:deleteMap()
+function clipDistanceControl:delete()
 	if (self.triggerId ~= nil) then
 		removeTrigger(self.triggerId)
 	end
 end
-
-function clipDistanceControl:keyEvent(unicode, sym, modifier, isDown) end
-function clipDistanceControl:mouseEvent(posX, posY, isDown, isUp, button) end
-function clipDistanceControl:draw() end
-function clipDistanceControl:update(dt) end
 
 function clipDistanceControl:clipDistanceControlCallback(triggerId, otherId, onEnter, onLeave, onStay, otherShapeId)
 
@@ -142,4 +138,3 @@ function clipDistanceControl:clipDistanceControlCallback(triggerId, otherId, onE
 end
 
 g_onCreateUtil.addOnCreateFunction("clipDistanceControl", clipDistanceControl.onCreate)
-addModEventListener(clipDistanceControl)
