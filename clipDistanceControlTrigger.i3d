@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<i3D name="untitled" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+  <Asset>
+    <Export program="GIANTS Editor 64bit" version="7.1.0"/>
+  </Asset>
+
+  <Files>
+  </Files>
+
+
+  <Materials>
+    <Material name="UnnamedMaterial" materialId="7" diffuseColor="1 1 1 1" ambientColor="1 1 1">
+    </Material>
+  </Materials>
+
+
+  <Shapes>
+    <IndexedTriangleSet name="cube" shapeId="1" bvCenter="0 0 0" bvRadius="0.866025" isOptimized="true">
+      <Vertices count="24" normal="true">
+        <v p="-0.5 -0.5 0.5" n="0 0 1"/>
+        <v p="0.5 -0.5 0.5" n="0 0 1"/>
+        <v p="0.5 0.5 0.5" n="0 0 1"/>
+        <v p="-0.5 0.5 0.5" n="0 0 1"/>
+        <v p="-0.5 0.5 0.5" n="0 1 0"/>
+        <v p="0.5 0.5 0.5" n="0 1 0"/>
+        <v p="0.5 0.5 -0.5" n="0 1 0"/>
+        <v p="-0.5 0.5 -0.5" n="0 1 0"/>
+        <v p="-0.5 0.5 -0.5" n="0 0 -1"/>
+        <v p="0.5 0.5 -0.5" n="0 0 -1"/>
+        <v p="0.5 -0.5 -0.5" n="0 0 -1"/>
+        <v p="-0.5 -0.5 -0.5" n="0 0 -1"/>
+        <v p="-0.5 -0.5 -0.5" n="0 -1 0"/>
+        <v p="0.5 -0.5 -0.5" n="0 -1 0"/>
+        <v p="0.5 -0.5 0.5" n="0 -1 0"/>
+        <v p="-0.5 -0.5 0.5" n="0 -1 0"/>
+        <v p="0.5 -0.5 0.5" n="1 0 0"/>
+        <v p="0.5 -0.5 -0.5" n="1 0 0"/>
+        <v p="0.5 0.5 -0.5" n="1 0 0"/>
+        <v p="0.5 0.5 0.5" n="1 0 0"/>
+        <v p="-0.5 -0.5 -0.5" n="-1 0 0"/>
+        <v p="-0.5 -0.5 0.5" n="-1 0 0"/>
+        <v p="-0.5 0.5 0.5" n="-1 0 0"/>
+        <v p="-0.5 0.5 -0.5" n="-1 0 0"/>
+      </Vertices>
+      <Triangles count="12">
+        <t vi="0 1 2"/>
+        <t vi="0 2 3"/>
+        <t vi="4 5 6"/>
+        <t vi="4 6 7"/>
+        <t vi="8 9 10"/>
+        <t vi="8 10 11"/>
+        <t vi="12 13 14"/>
+        <t vi="12 14 15"/>
+        <t vi="16 17 18"/>
+        <t vi="16 18 19"/>
+        <t vi="20 21 22"/>
+        <t vi="20 22 23"/>
+      </Triangles>
+      <Subsets count="1">
+        <Subset firstVertex="0" numVertices="24" firstIndex="0" numIndices="36"/>
+      </Subsets>
+    </IndexedTriangleSet>
+  </Shapes>
+
+
+  <Dynamics>
+  </Dynamics>
+
+  <Scene>
+    <Shape shapeId="1" name="clipDistanceControlTrigger" static="true" trigger="true" collisionMask="132120576" nodeId="10" materialIds="7" nonRenderable="true" distanceBlending="false"/>
+  </Scene>
+
+  <UserAttributes>
+    <UserAttribute nodeId="10">
+      <Attribute name="innerClipDistance" type="integer" value="100"/>
+      <Attribute name="onCreate" type="scriptCallback" value="modOnCreate.clipDistanceControl"/>
+    </UserAttribute>
+  </UserAttributes>
+
+</i3D>

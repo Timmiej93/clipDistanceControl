@@ -6,9 +6,12 @@ Dies ist ein Skript für das Spiel Landwirtschaft Simulator 17. Der Zweck dieses
 Wenn Sie dieses Skript auf Ihrer Karte implementieren möchten, lesen Sie bitte den Abschnitt zum [Copyright](#copyright) dieser README. Es gibt nur ein paar einfache Regeln, die sicherstellen, dass der Ursprung des Skripts immer gefunden werden kann.
 
 **Hinzufügen der Triggerform**
+Alternativ zum folgenden Abschnitt können Sie auch die Datei 'clipDistanceControlTrigger.i3d' importieren, die in diesem Repository enthalten ist. Dieses Objekt verfügt bereits über alle richtigen Einstellungen und muss nur entsprechend Ihren Anforderungen skaliert werden.
+
 - Fügen Sie Ihrer Karte eine Form hinzu. Ich würde vorschlagen, einfach auf "**Create > Primitive> Cube**" im Giants-Editor-Menü zu klicken.
 - Ändern Sie im 'Attributes'-fenster die **Scale X / Y / Z** -Werte, so dass der trigger die gewünschte Größe hat, und aktivieren Sie das Kontrollkästchen "**Rigid Body**".
 - Gehen Sie auf die Tab "**Rigid Body**" und kreuzen Sie die Kästchen "Collision" und "Trigger" an und setzen Sie **56031c2** im '**Collision Mask**' Textfeld. Klicken Sie auf die Knopf hinter diesem Textfeld, um zu überprüfen, ob die folgenden Nummern ein Häkchen haben: 1, 6, 7, 8, 12, 13, 21, 22, 24 und 26.
+-    **Experimental**: Sie können auch den Wert '7e00000' im Textfeld 'Collision Mask' versuchen. Vorläufige Tests haben gezeigt, dass diese Werte auch funktionieren, und sie sollten mit weniger anderen Dingen in Konflikt geraten. Zur Überprüfung sollte '7e00000' mit den Bits 21, 22, 23, 24, 25 und 26 übereinstimmen. Bitte melden Sie Ihre Ergebnisse in [#3](../../issues/3).
 - Wechseln Sie zum Tab "**Shape**" und aktivieren Sie das Kontrollkästchen '**Non Renderable**'.
 
 ## Das Skript und die richtigen Einstellungen hinzufugen

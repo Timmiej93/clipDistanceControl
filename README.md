@@ -10,9 +10,12 @@ This script has to be implemented on a map.
 If you want to implement this script on your map, please be sure to read the [Copyright](#copyright) section of this README. There are just a few simple rules that ensure that the origin of the script can always be found.
 
 **Adding the trigger shape**
+As an alternative to the section below, you can also import the 'clipDistanceControlTrigger.i3d' file that is included in this repository. This object already has all the correct settings, and only needs to be scaled to fit your needs.
+
 - Add a shape to your map. I'd suggest simply clicking '**Create > Primitives > Cube**' in the Giants editor menu.
 - In the Attributes window, change the **Scale X / Y / Z** values so the trigger is the desired size and tick the '**Rigid Body**' checkbox.
 - Go to the '**Rigid Body**' tab, and tick the '**Collision**' and '**Trigger**' boxes, and put '56031c2' in the 'Collision Mask' textbox. Click the button behind that textbox to verify the following numbers have a checkmark behind them: 1, 6, 7, 8, 12, 13, 21, 22, 24 and 26.
+-    **Experimental**: You can also try the value '7e00000' in the 'Collision Mask' textbox. Preliminary testing has showed that these values also work, and they should conflict with less other things. For verification, '7e00000' should match with bits 21, 22, 23, 24, 25 and 26. Please report your findings in [#3](../../issues/3).
 - Go to the '**Shape**' tab, and tick the '**Non Renderable**' checkbox.
 
 ## Add the script and proper settings
