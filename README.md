@@ -10,7 +10,7 @@ This script has to be implemented on a map.
 If you want to implement this script on your map, please be sure to read the [Copyright](#copyright) section of this README. There are just a few simple rules that ensure that the origin of the script can always be found.
 
 **Adding the trigger shape**
-As an alternative to the section below, you can also import the 'clipDistanceControlTrigger.i3d' file that is included in this repository. This object already has all the correct settings, and only needs to be scaled to fit your needs.
+As an alternative to the section below, you can also import the 'clipDistanceControlTrigger.i3d' file that is included in this repository. This object already has all the correct settings, and only needs to be scaled to fit your needs. This trigger uses an experimental collision mask. Please report your findings in [#3](../../issues/3).
 
 - Add a shape to your map. I'd suggest simply clicking '**Create > Primitives > Cube**' in the Giants editor menu.
 - In the Attributes window, change the **Scale X / Y / Z** values so the trigger is the desired size and tick the '**Rigid Body**' checkbox.

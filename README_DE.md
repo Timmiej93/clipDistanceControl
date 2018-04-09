@@ -6,7 +6,7 @@ Dies ist ein Skript für das Spiel Landwirtschaft Simulator 17. Der Zweck dieses
 Wenn Sie dieses Skript auf Ihrer Karte implementieren möchten, lesen Sie bitte den Abschnitt zum [Copyright](#copyright) dieser README. Es gibt nur ein paar einfache Regeln, die sicherstellen, dass der Ursprung des Skripts immer gefunden werden kann.
 
 **Hinzufügen der Triggerform**
-Alternativ zum folgenden Abschnitt können Sie auch die Datei 'clipDistanceControlTrigger.i3d' importieren, die in diesem Repository enthalten ist. Dieses Objekt verfügt bereits über alle richtigen Einstellungen und muss nur entsprechend Ihren Anforderungen skaliert werden.
+Alternativ zum folgenden Abschnitt können Sie auch die Datei 'clipDistanceControlTrigger.i3d' importieren, die in diesem Repository enthalten ist. Dieses Objekt verfügt bereits über alle richtigen Einstellungen und muss nur entsprechend Ihren Anforderungen skaliert werden. Dieser Trigger verwendet eine experimentelle Kollisionsmaske. Bitte melden Sie Ihre Ergebnisse in [#3](../../issues/3).
 
 - Fügen Sie Ihrer Karte eine Form hinzu. Ich würde vorschlagen, einfach auf "**Create > Primitive> Cube**" im Giants-Editor-Menü zu klicken.
 - Ändern Sie im 'Attributes'-fenster die **Scale X / Y / Z** -Werte, so dass der trigger die gewünschte Größe hat, und aktivieren Sie das Kontrollkästchen "**Rigid Body**".
